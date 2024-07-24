@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <title>فروش انلاین قالب سایت مشاغل</title>
+    <title>فروشگاه اینترنتی قالب سایت مشاغل</title>
 {% endblock %}
 
 {% block body %}
 
     {% for p in products %}
-    {{ p.name }}
+
+        <a href="{{ url_for('general.product', id=p.id, name=p.name) }}">{{ p.name }}</a>
+
     {% endfor %}
+
 {% endblock %}
