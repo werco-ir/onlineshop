@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
-{% block header%}
+{% block header %}
     <title>admin|login</title>
 {% endblock %}
 
 {% block body %}
     <h1>admin login</h1>
-<form action="#" method="POST">
-    <input type="text" name="username" placeholder="username"><br>
-    <input type="password" name="password" placeholder=password><br>
-    <input type="submit">
-</form>
+    <form action="#" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="password" name="password" placeholder=password><br>
+        <input type="submit">
+    </form>
 {% endblock %}
