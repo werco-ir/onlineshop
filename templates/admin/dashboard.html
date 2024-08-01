@@ -4,4 +4,10 @@
 {% endblock %}
 {% block body %}
     <a href="/admin/dashboard/products">صفحه محصولات</a>
+    <div>
+        {% for cart in carts %}
+            {{ cart.user.username }} - {{ cart.user.phone }} - {{ cart.get_status_persion() }}
+            <a href="{{ url_for('admin.order',id=cart.id) }}">اطلاعات بیشتر</a><br>
+        {% endfor %}
+    </div>
 {% endblock %}
