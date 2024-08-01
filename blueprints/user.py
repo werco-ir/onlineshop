@@ -1,11 +1,14 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash, json
 from flask_login import login_user, login_required, current_user
 from passlib.hash import sha256_crypt
 from extentions import db
 from models.cart import Cart
+from models.payment import Payment
 from models.product import Product
 from models.user import User
 from models.cart_item import CartItem
+import requests
+
 
 app = Blueprint("user", __name__)
 
@@ -76,7 +79,7 @@ def register():
 @app.route('/user/dashboard', methods=['GET'])
 @login_required
 def dashboard():
-    return "this is dashboard"
+    return render_template('user/dashboard.html')
 
 
 @app.route('/add-to-cart', methods=['GET'])
@@ -106,8 +109,6 @@ def add_to_cart():
     return redirect(url_for('user.cart'))
 
 
-
-
 @app.route('/remove-from-cart', methods=['GET'])
 @login_required
 def remove_from_cart():
@@ -116,14 +117,10 @@ def remove_from_cart():
     if cart_item.quantity > 1:
         cart_item.quantity -= 1
     else:
-       db.session.delete(cart_item)
+        db.session.delete(cart_item)
     db.session.commit()
 
     return redirect(url_for('user.cart'))
-
-
-
-
 
 
 @app.route('/cart', methods=['GET'])
@@ -133,8 +130,22 @@ def cart():
     return render_template('user/cart.html', cart=cart)
 
 
+@app.route('/payment', methods=['GET'])
+@login_required
+def payment():
+    r = requests.post("https://payment.zarinpal.com/pg/v4/payment/request.json",
+                      data={
+                          'merchant_id': '73a4c8d3-8e5a-4909-827e-fd3e0b1574c4',
+                          'amount': 10000,
+                          'callback_url': 'http://localhost:5000/verify',
+                          'description': 'Transaction description'
 
+                      })
+    print(r.text)
+    return "ok"
 
-
-
-
+@app.route('/user/dashboard/order/<id>', methods=['GET'])
+@login_required
+def order(id):
+    cart = current_user.carts.filter(Cart.id == id).first_or_404()
+    return render_template('user/order.html',cart=cart)
