@@ -157,40 +157,75 @@ header a:hover {
 }
 
 .products {
-    max-width: 847px;
+    max-width: 900px;
     display: flex;
-    margin:auto;
+    margin: auto;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items:stretch;
     margin-top: 20px;
-    align-items: stretch;
+
+
+
 
 }
 
-.product-box {
-    max-width: 250px;
-    margin:15px;
-    padding-bottom: 32px;
+
+
+.tag{
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 2px 4px;
+    font-weight: 200;
+    color: #ffffff;
+
+}
+.tag img {
+    width: 20px;
+    margin-left: 5px;
+}
+
+
+.tag.red{
+    border: 1px solid red;
+    background: rgba(255, 0, 0, 0.55);
+}
+.tag.blue{
+    border: 1px solid blue;
+    background: rgba(0, 0, 255, 0.37);
+}
+
+.product-box{
+    position: relative
+}
+
+
+
+.product-box  section{
+    max-width: 260px;
+    height: 100%;
+    margin:15px ;
     border-radius: 29px;
     background: #F8CB2E;
     box-shadow: 2px 2px 5px #000000,
     -2px -2px 5px #000000;
-    position: relative;
+
 }
 
-.product-box > img{
+.product-box section> img{
     width: 100%;
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
 
 }
-.product-box > h3 {
+.product-box section> h3 {
  margin: 5px;
 
 
 }
-.product-box > a{
+.add-to-cart-btn {
     text-decoration: none;
     padding:5px;
     font-size: 14px;
@@ -202,11 +237,11 @@ header a:hover {
     box-shadow:  -5px -5px 12px #5a5a5a,
             0 0 12px #ffffff;
     position: absolute;
-    left:10px;
-    bottom:10px;
+    left:16px;
+    top:40px;
 
 }
-.product-box > a:hover{
+.add-to-cart-btn:hover{
 background-image: linear-gradient(
     to right,
     rgb(250, 82, 82),
@@ -235,7 +270,7 @@ background-image: linear-gradient(
 }
 
 
-.product-box > p {
+.product-box section> p {
     font-size: 12px;
     margin: 0 10px;
 }
