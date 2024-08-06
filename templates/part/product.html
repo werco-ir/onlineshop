@@ -1,0 +1,11 @@
+<section class="product-box">
+    <img src="{{ url_for('static', filename='cover/' +p.id|string+'.jpg') }}">
+    <h3>{{ p.name }}</h3>
+    <P>{{ p.description|truncate(50) }}<br>
+        <a href="{{ url_for('general.product', id=p.id, name=p.name) }}">اطلاعات بیشتر</a></p>
+    <a href="/add-to-cart?id={{ p.id }}">افزودن به سبد خرید<img
+            src="{{ url_for('static',filename="theme-image/cart.png") }}"></a>
+</section>
+
+
+

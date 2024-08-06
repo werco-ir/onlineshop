@@ -6,28 +6,11 @@
 
 {% block body %}
 
-    <header>
-
-        <section>
-            <img src="{{ url_for('static',filename='image/logo.png' ) }}" alt="werco.ir">
-            <div>
-                <a href="#">صفحه اصلی</a>
-                <a href="#">محصولات جدید</a>
-                <a href="#">درباره ما</a>
-                <a href="#">محصولات پرفروش</a>
-            </div>
-        </section>
-    </header>
+    {% include 'part/header.html'%}
 
     <section class="products">
         {% for p in products %}
-            <section class="product-box">
-                <img src="{{ url_for('static', filename='cover/' +p.id|string+'.jpg') }}">
-                <h3>{{ p.name }}</h3>
-                <P>{{ p.description|truncate(50) }}<br>
-                <a href="{{ url_for('general.product', id=p.id, name=p.name) }}">اطلاعات بیشتر</a></p>
-                <a href="/add-to-cart?id={{p.id }}">افزودن به سبد خرید</a>
-            </section>
+    {% include 'part/product.html'%}
         {% endfor %}
     </section>
 {% endblock %}

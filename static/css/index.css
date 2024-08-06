@@ -73,7 +73,13 @@
 
 :root {
     --font-color : #555555;
+    --timing:2s;
+    --width: 150px;
 }
+*{
+    transition: all 200ms ease-in;
+}
+
 
 body {
     padding: 0;
@@ -114,8 +120,23 @@ header  div {
     justify-content: center;
     align-items: center;
     float: right;
+}
+header  div input {
 
+  left: 0;
+  height:35px;
+  width: 150px;
+  background-color: #fff;
+  border-radius: 20px;
+  fill: rgb(91, 107, 255);
+  border: 1px solid rgb(91, 107, 255);
+  display: flex;
+  float: right;
+}
 
+header  div img {
+    float: right;
+    display: flex;
 }
 
 header a {
@@ -135,20 +156,27 @@ header a:hover {
     inset -5px -5px 5px #2e3a57;
 }
 
-.products{
+.products {
+    max-width: 847px;
     display: flex;
+    margin:auto;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    align-items: stretch;
+
 }
 
 .product-box {
     max-width: 250px;
     margin:15px;
+    padding-bottom: 32px;
     border-radius: 29px;
-    background: #e0e0e0;
-    box-shadow: 5px 5px 10px #9BA4B5,
-    -5px -5px 10px #F1F6F9;
+    background: #F8CB2E;
+    box-shadow: 2px 2px 5px #000000,
+    -2px -2px 5px #000000;
+    position: relative;
 }
 
 .product-box > img{
@@ -167,18 +195,62 @@ header a:hover {
     padding:5px;
     font-size: 14px;
     border-radius: 9px;
-    background: linear-gradient(145deg, #ffc300, #ffca00);
+    background: #3DC2EC;
     color: #0d124a;
     float: left;
-    margin-left:10px;
-    margin-bottom: 7px;
     margin-right: 5px;
+    box-shadow:  -5px -5px 12px #5a5a5a,
+            0 0 12px #ffffff;
+    position: absolute;
+    left:10px;
+    bottom:10px;
 
+}
+.product-box > a:hover{
+background-image: linear-gradient(
+    to right,
+    rgb(250, 82, 82),
+    rgb(250, 82, 82) 16.65%,
+    rgb(190, 75, 219) 16.65%,
+    rgb(190, 75, 219) 33.3%,
+    rgb(76, 110, 245) 33.3%,
+    rgb(76, 110, 245) 49.95%,
+    rgb(64, 192, 87) 49.95%,
+    rgb(64, 192, 87) 66.6%,
+    rgb(250, 176, 5) 66.6%,
+    rgb(250, 176, 5) 83.25%,
+    rgb(253, 126, 20) 83.25%,
+    rgb(253, 126, 20) 100%,
+    rgb(250, 82, 82) 100%
+);
+      );
+  animation: var(--timing) linear dance6123 infinite;
+  transform: scale(1.1) translateY(-1px);
+}
+
+@keyframes dance6123 {
+  to {
+    background-position: var(--width);
+  }
 }
 
 
 .product-box > p {
-    font-size:12px;
-    margin:0;
-    margin-bottom: 5px;
+    font-size: 12px;
+    margin: 0 10px;
 }
+
+
+a{
+    display: flex;
+    align-items: center;
+}
+a > img {
+    width:20px;
+    margin-right: 5px;
+
+
+}
+
+
+
