@@ -162,15 +162,16 @@ header a:hover {
     margin: auto;
     flex-wrap: wrap;
     justify-content: center;
-    align-items:stretch;
+    align-items:start;
     margin-top: 20px;
-
-
-
-
 }
 
-
+.price{
+    font-size: 16px;
+    font-weight: 500;
+    float: left;
+    padding-left: 10px;
+}
 
 .tag{
     display: inline-flex;
@@ -211,6 +212,7 @@ header a:hover {
     background: #F8CB2E;
     box-shadow: 2px 2px 5px #000000,
     -2px -2px 5px #000000;
+    padding-bottom: 32px;
 
 }
 
