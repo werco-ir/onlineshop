@@ -169,8 +169,7 @@ header a:hover {
 .price{
     font-size: 16px;
     font-weight: 500;
-    float: left;
-    padding-left: 10px;
+
 }
 
 .tag{
@@ -183,12 +182,16 @@ header a:hover {
     color: #ffffff;
 
 }
+.tag.big{
+    font-weight: 500;
+    font-size: 20px;
+    display: inline-flex;
+
+}
 .tag img {
     width: 20px;
     margin-left: 5px;
 }
-
-
 .tag.red{
     border: 1px solid red;
     background: rgba(255, 0, 0, 0.55);
@@ -196,6 +199,26 @@ header a:hover {
 .tag.blue{
     border: 1px solid blue;
     background: rgba(0, 0, 255, 0.37);
+
+}
+
+.tag.red.big{
+    border: 1px solid red;
+    background: rgba(255, 0, 0, 0.55);
+}
+.tag.blue.big{
+    border: 1px solid blue;
+    background: rgba(0, 0, 255, 0.37);
+
+}
+.tag.green.big{
+    border:2px solid #054205;
+    background: rgba(126, 255, 0, 0.68);
+
+
+}
+.tag.green.big img{
+    width: 30px;
 }
 
 .product-box{
@@ -272,6 +295,35 @@ background-image: linear-gradient(
 }
 
 
+.add-to-cart-btn2 {
+
+    text-decoration: none;
+    padding:5px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 9px;
+    background: #3DC2EC;
+    color: #0d124a;
+
+
+    box-shadow:  -5px -5px 12px #5a5a5a,
+            0 0 12px #ffffff;
+    display: flex;
+    justify-content: center;
+
+
+
+
+
+}
+
+.add-to-cart-btn2:hover{
+    background: rgba(61, 194, 236, 0.68);
+    border:  2px solid#ffffff;
+    color: #ffffff;
+
+}
+
 .product-box section> p {
     font-size: 12px;
     margin: 0 10px;
@@ -289,5 +341,63 @@ a > img {
 
 }
 
+.product-detail-box{
+
+    display:flex;
+    flex-wrap: wrap;
+    max-width:800px;
+    justify-content: center;
+    align-items: start;
+    margin:  50px auto auto;
+
+}
+
+.product-detail-box img{
+    max-width: 280px;
+    margin-left:15px ;
+}
 
 
+.product-detail-box >section{
+    max-width: 500px;
+
+}
+
+.product-detail-box h6 {
+    font-size: 13px;
+    margin:0;
+    color: #ffca01;
+}
+
+.product-detail-box h1 {
+    color: #ffca01;
+    margin-bottom: 5px;
+}
+.product-detail-box .price{
+    font-size: 20px;
+    font-weight: 500;
+    color: goldenrod;
+    margin-bottom: 0;
+    display: block;
+
+}
+.product-detail-box .price-box {
+    text-align: center;
+    background: #d8d5d5;
+    height: 35px;
+
+
+}
+
+.product-description-box{
+    max-width: 1100px;
+    margin: auto;
+    text-align: justify;
+    color: #dad6d6;
+
+}
+
+.similar-products-box {
+    max-width: 1100px;
+    margin: auto;
+}
