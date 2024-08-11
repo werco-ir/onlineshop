@@ -72,12 +72,16 @@
 }
 
 :root {
-    --font-color : #555555;
+    --font-color : #dfdddd;
     --timing:2s;
     --width: 150px;
 }
 *{
     transition: all 200ms ease-in;
+    margin: 0;
+    padding: 0;
+    font-family: Vazirmatn;
+    box-sizing: border-box;
 }
 
 
@@ -85,77 +89,123 @@ body {
     padding: 0;
     margin: 0;
     font-size: 16px;
-    background: #212A3E;
     color: var(--font-color);
     font-family: Vazirmatn;
 }
 
 header {
     width: 100%;
-    text-align: center;
+
+
 }
 
 header img {
     max-width: 200px;
-    max-height: 40px;
+    max-height:45px;
     float: left;
 
 
 }
 
-header > section {
+
+nav{
     width: 100%;
-    height: 40px;
-    max-width: 800px;
-    margin: 30px auto auto;
-    padding: 10px 20px;
-    border-radius: 72px;
-    background: #212A3E;
-    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.6),
-    -7px -7px 5px rgba(104, 104, 115, 0.58);
-}
-
-header  div {
-    display: flex;
-    justify-content: center;
+    display:flex;
     align-items: center;
-    float: right;
+    justify-content: space-between;
+    padding: 10px 0;
 }
-header  div input {
-
-  left: 0;
-  height:35px;
-  width: 150px;
-  background-color: #fff;
-  border-radius: 20px;
-  fill: rgb(91, 107, 255);
-  border: 1px solid rgb(91, 107, 255);
-  display: flex;
-  float: right;
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
 }
-
-header  div img {
-    float: right;
-    display: flex;
+nav ul li {
+    display: inline-block;
+    margin: 10px 20px;
 }
-
-header a {
-    font-size: 20px;
-    color: #e6e6e6;
+nav ul li a{
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 900;
-    margin: 0 10px;
-    padding: 5px;
 }
+nav ul li a:hover{
 
-header a:hover {
-    color: #878787;
-    border-radius: 50px;
-    background: #212A3E;
-    box-shadow: inset 5px 5px 5px #111a22,
-    inset -5px -5px 5px #2e3a57;
 }
+nav button {
+    width: 105px;
+    height:65px;
+    display:flex;
+    align-items:center;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    background: #f5168d;
+    color: #ffffff;
+    font-weight: 500;
+    cursor:pointer;
+        box-shadow: 2px 2px 5px  #f5168d,
+    -2px -2px 5px  #f5168d ;
 
+}
+nav button img{
+    width: 40px;
+    margin-right: 0;
+    padding: 0;
+
+}
+.header-text h1{
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 85px;
+    margin-bottom: 25px;
+    margin-top: 90px;
+
+}
+.header-text p{
+    font-size: 16px;
+    color: #edecec;
+
+
+}
+.header-text form{
+    display: flex;
+    align-items: center;
+    background: #dfdddd;
+    border-radius:5px ;
+    padding: 10px;
+    margin-top: 30px;
+    width: 800px;
+
+}
+.header-text form input{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    padding-left: 10px;
+    background: #dfdddd;
+
+}
+.search-btn{
+    width: 55px;
+    height: 35px;
+    background: #e4af00;
+    border-radius: 10px;
+    margin-right: 15px;
+    color: #ffffff;
+}
+.search-btn:hover{
+    background: #ffde80;
+    color: #978f8f;
+    border-radius: 10px;
+    border: #ffffff;
+    box-shadow:  2px 2px 5px#dfdddd,
+    -2px -2px 5px #dfdddd;
+
+
+}
 .products {
     max-width: 900px;
     display: flex;
@@ -232,11 +282,11 @@ header a:hover {
     height: 100%;
     margin:15px ;
     border-radius: 29px;
-    background: #F8CB2E;
+    background: #1d293e;
     box-shadow: 2px 2px 5px #000000,
     -2px -2px 5px #000000;
     padding-bottom: 32px;
-
+    color: #d8d5d5;
 }
 
 .product-box section> img{
@@ -393,11 +443,22 @@ a > img {
     max-width: 1100px;
     margin: auto;
     text-align: justify;
-    color: #dad6d6;
+    color: rgb(14, 14, 14);
+    background: rgba(255, 255, 255, 0.66);
 
 }
 
 .similar-products-box {
     max-width: 1100px;
     margin: auto;
+}
+.background{
+
+    background-size: cover;
+    background-image: linear-gradient(rgba(34, 54, 87, 0.59), rgba(220, 220, 220, 0.22)), url(/static/theme-image/header.png);
+    background-position: center;
+    min-height: 100vh;
+    width:100%;
+    padding: 10px 8%;
+    box-sizing: border-box;
 }
