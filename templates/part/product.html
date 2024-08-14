@@ -1,4 +1,5 @@
 <div  class="product-box" >
+
     <a  style="all:unset;cursor: pointer"; href="{{ url_for('general.product', id=p.id, name=p.name ) }}">
         <section>
             <img src="{{ url_for('static', filename='cover/' +p.id|string+'.jpg') }}">

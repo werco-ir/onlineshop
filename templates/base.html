@@ -8,18 +8,17 @@
     {% block header %}{% endblock %}
 </head>
 <body>
-<div class="background">
+
 
 
 {% block body %}{% endblock %}
-<script>
+<script >
     const prices= document.getElementsByClassName('price')
     for(let i = 0; i< prices.length; i++){
         let price = prices[i]
         price.innerText = parseInt(price.innerText).toLocaleString() + "  تومان"
     }
 </script>
-</div>
 </body>
 </html>
 

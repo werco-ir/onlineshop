@@ -1,28 +1,61 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <title>سبد خرید کاربر</title>
+    <title>سبد خرید </title>
 {% endblock %}
 
 {% block body %}
+    <section class="cart-body">
+    <nav class="cart-header">
+        <img src="{{ url_for('static',filename='image/loogoo.jpg' ) }}" alt="werco.ir">
 
-    {% if cart != None and cart.cart_items|list|length > 0 %}
+        <ul>
+            <li><a href="/">صفحه اصلی</a></li>
+            <li><a href="/about">درباره ما</a></li>
+        </ul>
 
-            {% for cart_item in cart.cart_items %}
-                {{ cart_item.product.name }} , {{ cart_item.quantity }} , {{ cart_item.product.price }}
-                <form action="/remove-from-cart" method='get'>
-                    <input type="hidden" name="id" value="{{ cart_item.id }}">
-                    <input type="submit" value="Delete">
-                </form>
-            {% endfor %}
+    </nav>
+    <section class="simple-box">
+        <h1>سبد خرید</h1>
+        {% if cart != None and cart.cart_items|list|length > 0 %}
+    <table class="cart-table">
+        <tr>
+            <th>کد محصول</th>
+            <th>نام محصول</th>
+            <th>قیمت</th>
+            <th>تعداد</th>
+
+        </tr>
+        {% for cart_item in cart.cart_items %}
+            <tr>
+                <td>{{ cart_item.product.id }}</td>
+                <td>{{ cart_item.product.name }}</td>
+                <td class="price">{{ cart_item.product.price }}</td>
+                <td><a class="cartitem-decrease" href="/remove-from-cart?id={{ cart_item.id }}">-</a>{{ cart_item.quantity }}<a class="cartitem-increase" href="/add-to-cart?id={{ cart_item.product.id }}">+</a></td>
+
+            </tr>
+
+        {% endfor %}
+            <tr>
+
+                <td colspan="3" style="text-align: left"><span class="price">{{ cart.total_price() }}تومان</span></td>
+            </tr>
+    </table>
+        <div class="cart-price-box">
+
+            <a class="add-to-cart-btn2" href="/payment">پرداخت</a>
+        </div>
 
 
-        <b>قیمت کل:{{ cart.total_price() }} تومان</b>
-
-
-        <a href="/payment">پرداخت</a>
 
     {% else %}
         سبد خرید خالی است
     {% endif %}
+
+
+    </section>
+
+
+    </section>
+
 {% endblock %}
