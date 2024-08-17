@@ -1,39 +1,71 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <title>ورود/ثبت نام کاربران</title>
+    <title>ورود/ثبت نام </title>
 {% endblock %}
 
 {% block body %}
+    <section class="login-body">
+        <nav class="login-header">
+            <img src="{{ url_for('static',filename='image/loogoo.jpg' ) }}" alt="werco.ir">
+
+            <ul>
+                <li><a href="/">صفحه اصلی</a></li>
+                <li><a href="/about">درباره ما</a></li>
+
+            </ul>
+
+        </nav>
+        <section class="simple-box">
+
+            <div id="login-box">
+                <h1>ورود</h1>
+                <form action="#" method="POST">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                    <input type="text" name="username" placeholder="نام کاربری">
+                    <input type="password" name="password" placeholder="رمز عبور">
+
+                    <input type="submit"value="ورود">
+                </form>
+                <span  style="cursor: pointer" onclick="javascript:show_register()">قبلا ثبت نام   نکرده اید؟ثبت نام</span>
+            </div>
+
+            <div id="register-box">
+                <h1>ثبت نام</h1>
+                <form action="#" method="POST">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                    <input type="hidden" name="register" value="1">
+                    <input type="text" name="username" placeholder="نام کاربری">
+                    <input type="password" name="password" placeholder="رمز عبور">
+                    <input type="email" name="email" placeholder="ایمیل">
+                    <input type="number" name="phone" placeholder="شماره موبایل">
+                    <textarea  name="address" type="text" placeholder="ادرس پستی"></textarea>
+                    <input type="submit" value="ثبت">
+                </form>
+                <span style="cursor: pointer" onclick="javascript:show_login()">قبلا ثبت نام   کرده اید؟ورود</span>
+            </div>
 
 
-    {% for m in get_flashed_messages() %}
-        {{ m }}
-    {% endfor %}
+        </section>
+
+        {% for m in get_flashed_messages() %}
+            {{ m }}
+        {% endfor %}
+    <script>
+        const register_box = document.getElementById('register-box')
+        const login_box = document.getElementById('login-box')
+
+        const show_register  = () => {
+            register_box.style.display = "block"
+            login_box.style.display = "none"
+        }
+
+        const show_login  = () => {
+            register_box.style.display = "none"
+            login_box.style.display = "block"
+        }
+    </script>
 
 
-    <h1>user/login</h1>
-    <form action="#" method="POST">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <input type="text" name="username" placeholder="username"><br>
-        <input type="password" name="password" placeholder=password><br>
-
-        <input type="submit">
-    </form>
-
-
-    <h1>user/register</h1>
-    <form action="#" method="POST">
-        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
-        <input type="hidden" name="register" value="1">
-        <input type="text" name="username" placeholder="username"><br>
-        <input type="password" name="password" placeholder=password><br>
-        <input type="email" name="email" placeholder="email"><br>
-        <input type="number" name="phone" placeholder="phone"><br>
-        <input type="text" name="address" placeholder="address"><br>
-        <input type="submit">
-    </form>
-
-
-
+    </section>
 {% endblock %}
