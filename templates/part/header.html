@@ -9,10 +9,13 @@
                     <li><a href="/about">درباره ما</a></li>
                     <li><a href="/cart">سبد خرید</a></li>
                     <li><a href="/user/dashboard">پنل کاربری</a></li>
+                    <li><a href="/user/login">ثبت نام/ ورود</a></li>
                 </ul>
-                <a href="/user/login" class="login-register-btn"><img src="static/theme-image/search.png">ثبتنام <br>
-                    ورود</a>
+                {% if current_user.is_authenticated %}
 
+                {% else %}
+                <a class="heeader-link" href="/user/login" >ثبت نام ورود</a>
+                {% endif %}
             </nav>
             <div class="header-text">
                 <h1> Werco<br> سازنده سایت های اینترنتی<br>
@@ -26,7 +29,7 @@
                     خواهند گرفت </p>
                 <form class="search" action="/" method="get">
 
-                    <input type="search" name="search" placeholder=" جستوجو..."
+                    <input type="search" name="search" placeholder=" جست وجو..."
                            value="{{ search if search != None }}">
                     <button type="submit" class="search-btn">ارسال
                     </button>

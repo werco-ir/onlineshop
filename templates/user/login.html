@@ -12,6 +12,7 @@
             <ul>
                 <li><a href="/">صفحه اصلی</a></li>
                 <li><a href="/about">درباره ما</a></li>
+                <li><a href="/admin/login">پنل ادمین</a></li>
 
             </ul>
 
@@ -33,7 +34,7 @@
             <div id="register-box">
                 <h1>ثبت نام</h1>
                 <form action="#" method="POST">
-                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="register" value="1">
                     <input type="text" name="username" placeholder="نام کاربری">
                     <input type="password" name="password" placeholder="رمز عبور">

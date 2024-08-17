@@ -14,6 +14,7 @@
             <li><a href="/about">درباره ما</a></li>
             <li><a href="/cart">سبد خرید</a></li>
              <li><a href="/user/dashboard">پنل کاربری</a></li>
+
         </ul>
 
     </nav>
@@ -24,22 +25,20 @@
         <tr>
             <th>کد محصول</th>
             <th>نام محصول</th>
-            <th>قیمت</th>
             <th>تعداد</th>
-
+            <th>قیمت</th>
         </tr>
         {% for cart_item in cart.cart_items %}
             <tr>
                 <td>{{ cart_item.product.id }}</td>
                 <td>{{ cart_item.product.name }}</td>
-                <td class="price">{{ cart_item.product.price }}</td>
                 <td><a class="cartitem-decrease" href="/remove-from-cart?id={{ cart_item.id }}">-</a>{{ cart_item.quantity }}<a class="cartitem-increase" href="/add-to-cart?id={{ cart_item.product.id }}">+</a></td>
-
+                <td class="price">{{ cart_item.product.price }}</td>
             </tr>
 
         {% endfor %}
             <tr>
-
+                <td>قیمت کل:</td>
                 <td colspan="3" style="text-align: left"><span class="price">{{ cart.total_price() }}تومان</span></td>
             </tr>
     </table>

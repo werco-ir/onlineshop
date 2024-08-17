@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, json
-from flask_login import login_user, login_required, current_user
+from flask_login import login_user, login_required, current_user,logout_user
 from passlib.hash import sha256_crypt
 from extentions import db
 from models.cart import Cart
@@ -9,13 +9,14 @@ from models.user import User
 from models.cart_item import CartItem
 import requests
 
-
 app = Blueprint("user", __name__)
 
 
 @app.route('/user/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
+        if current_user.is_authenticated:
+            return redirect(url_for('user.dashboard'))
         return render_template('user/login.html')
     else:
         register = request.form.get('register', None)
@@ -28,7 +29,7 @@ def login():
         if register != None:
             user = User.query.filter(User.username == username).first()
             if user != None:
-                flash("Choose another username.")
+                flash("نام کاربری دیگری انتخاب کنید.")
                 return redirect(url_for("user.login"))
 
             user = User(username=username, password=sha256_crypt.encrypt(password), email=email, phone=phone,
@@ -41,16 +42,15 @@ def login():
         else:
             user = User.query.filter(User.username == username).first()
             if user == None:
-                flash('Username or password is incorrect !')
+                flash('نام کاربری یا رمزعبور اشتباه است.')
                 return redirect(url_for("user.login"))
 
             if sha256_crypt.verify(password, user.password):
                 login_user(user)
                 return redirect(url_for('user.dashboard'))
             else:
-                flash('Password is incorrect !')
+                flash('رمزعبور اشتباه است.')
                 return redirect(url_for("user.login"))
-        return 'done'
 
 
 @app.route('/user/login', methods=['GET', 'POST'])
@@ -76,10 +76,35 @@ def register():
         return 'done'
 
 
-@app.route('/user/dashboard', methods=['GET'])
+@app.route('/user/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    return render_template('user/dashboard.html')
+    if request.method == 'GET':
+        return render_template('user/dashboard.html')
+    else:
+        username = request.form.get('username', None)
+        password = request.form.get('password', None)
+        email = request.form.get('email', None)
+        phone = request.form.get('phone', None)
+        address = request.form.get('address', None)
+
+        if current_user.username != username:
+            user = User.query.filter(User.username == username).first()
+            if user != None:
+                flash("نام کاربری از قبل انتخاب شده است!")
+                return redirect(url_for("user.dashboard"))
+            else:
+                current_user.username = username
+        if password != None:
+            current_user.password = sha256_crypt.encrypt(password)
+
+        current_user.email = email
+        current_user.phone = phone
+        current_user.address = address
+        db.session.commit()
+        flash("تغییرات با موفقیت انجام شد.")
+
+        return redirect(url_for('user.dashboard'))
 
 
 @app.route('/add-to-cart', methods=['GET'])
@@ -108,6 +133,16 @@ def add_to_cart():
 
     return redirect(url_for('user.cart'))
 
+
+
+
+
+@app.route('/user/logout', methods=['GET'])
+@login_required
+def logout():
+    logout_user()
+    flash("از حساب کاربری خارج شدید.")
+    return redirect("/")
 
 @app.route('/remove-from-cart', methods=['GET'])
 @login_required
@@ -144,8 +179,9 @@ def payment():
     print(r.text)
     return "ok"
 
+
 @app.route('/user/dashboard/order/<id>', methods=['GET'])
 @login_required
 def order(id):
     cart = current_user.carts.filter(Cart.id == id).first_or_404()
-    return render_template('user/order.html',cart=cart)
+    return render_template('user/order.html', cart=cart)
