@@ -30,7 +30,7 @@ def load_user(user_id):
 
 @login_manager.unauthorized_handler
 def unauthorized():
-    flash("You are not logged in! Please login first")
+    flash("وارد حساب کاربری نشده اید.لطفا اول وارد شوید.")
     return redirect(url_for('user.login'))
 
 with app.app_context():

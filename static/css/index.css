@@ -967,3 +967,210 @@ a > img {
     font-weight: 400;
 
 }
+.admin-login-body{
+    height: 100vh;
+}
+.admin-login-header{
+    width: 80%;
+    margin-right: 150px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    background: rgba(230, 227, 227, 0.75);
+    border-radius: 30px;
+    margin-top: 15px;
+    color: #605e5e;
+
+}
+
+.admin-login-header img {
+    max-width: 200px;
+    max-height: 45px;
+    float: left;
+    margin-right: 85px;
+}
+
+
+
+
+.simple-box-admin-login h1 {
+    color: #1220d8;
+    margin: auto;
+
+
+}
+
+.simple-box-admin-login {
+    background: rgba(230, 227, 227, 0.75);
+    border: 2px solid rgb(216, 216, 216);
+    border-radius: 30px;
+    max-width: 800px;
+    margin: 60px auto 250px auto;
+    color: rgb(37, 36, 36);
+    padding: 10px;
+    overflow: auto;
+}
+
+.simple-box-admin-login input {
+    color: var(--font-color);
+    font-size: 16px;
+    font-family: Vazirmatn;
+    display: block;
+    margin: 8px auto;
+    border-radius: 8px;
+    width: 300px;
+    height: 50px;
+}
+
+.simple-box-admin-login span:hover {
+    color: #00b6ff;
+}
+
+.simple-box-admin-login input[type='submit'] {
+    all: unset;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 290px;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+    color: #00b6ff;
+    background: transparent;
+    border: 2px solid #00b6ff;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 0;
+    box-shadow: 0 2px 2px #00b6ff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.simple-box-admin-login input[type='submit']:hover {
+    background: white;
+}
+
+.admin-dashboard-body{
+    height: 100vh;
+}
+.admin-dashboard-header{
+        width: 80%;
+    margin-right: 150px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    background: rgba(230, 227, 227, 0.75);
+    border-radius: 30px;
+    margin-top: 15px;
+    color: #605e5e;
+
+}
+
+.admin-dashboard-header img {
+    max-width: 200px;
+    max-height: 45px;
+    float: left;
+    margin-right: 85px;
+}
+
+.simple-box-admin-dashboard{
+    background: rgba(230, 227, 227, 0.75);
+    border: 2px solid rgb(216, 216, 216);
+    border-radius: 30px;
+    max-width: fit-content;
+    margin: 60px auto 250px auto;
+    color: rgb(37, 36, 36);
+    padding: 10px;
+    overflow: auto;
+}
+.simple-box-admin-dashboard h1 {
+    color: #1220d8;
+    margin: auto;
+
+
+}
+.simple-box-admin-dashboard  br{
+    display: none;
+
+}
+.simple-box-admin-dashboard{
+    padding: 20px 70px;
+    max-width: 480px;
+}
+
+.simple-box-admin-dashboard td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid rgba(9, 9, 9, 0.17);
+    margin-top: 0;
+
+}
+.simple-box-admin-dashboard a{
+    text-decoration: none;
+}
+.admin-order-body{
+    height: 100vh;
+}
+.admin-order-header{
+    width: 80%;
+    margin-right: 150px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    background: rgba(230, 227, 227, 0.75);
+    border-radius: 30px;
+    margin-top: 15px;
+    color: #605e5e;
+
+}
+
+.admin-order-header img {
+    max-width: 200px;
+    max-height: 45px;
+    float: left;
+    margin-right: 85px;
+}
+
+
+.simple-box-admin-order{
+    background: rgba(230, 227, 227, 0.75);
+    border: 2px solid rgb(216, 216, 216);
+    border-radius: 30px;
+    margin: 60px auto 250px auto;
+    color: rgb(37, 36, 36);
+    padding: 10px;
+    overflow: auto;
+    max-width: fit-content;
+}
+.simple-box-admin-order td,th{
+    padding: 10px;
+
+
+
+}
+.simple-box-admin-order h1{
+    color: #1220d8;
+    margin: auto;
+}
+.simple-box-admin-order input{
+    background: #ffca01;
+    width: 60px;
+    border-radius: 10px;
+    border:2px solid snow;
+    color: snow;
+    font-family: Vazirmatn;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.simple-box-admin-order input:hover{
+    background: #b69302;
+    color: #afabab;
+     border:2px solid #afabab;
+}
