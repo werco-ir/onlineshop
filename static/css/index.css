@@ -337,12 +337,22 @@ nav button img {
     width: 100%;
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
+    padding: 10px;
+    box-sizing: border-box;
+
 
 }
 
 .product-box section > h3 {
     margin: 5px;
     color: #ffffff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    height: 56px;
 
 
 }
@@ -425,6 +435,13 @@ nav button img {
 .product-box section > p {
     font-size: 12px;
     margin: 0 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    height: 56px;
 }
 
 
