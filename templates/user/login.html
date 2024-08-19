@@ -26,9 +26,10 @@
                     <input type="text" name="username" placeholder="نام کاربری">
                     <input type="password" name="password" placeholder="رمز عبور">
 
-                    <input type="submit"value="ورود">
+                    <input type="submit" value="ورود">
                 </form>
-                <span  style="cursor: pointer" onclick="javascript:show_register()">قبلا ثبت نام   نکرده اید؟ثبت نام</span>
+                <span style="cursor: pointer"
+                      onclick="javascript:show_register()">قبلا ثبت نام   نکرده اید؟ثبت نام</span>
             </div>
 
             <div id="register-box">
@@ -40,7 +41,7 @@
                     <input type="password" name="password" placeholder="رمز عبور">
                     <input type="email" name="email" placeholder="ایمیل">
                     <input type="number" name="phone" placeholder="شماره موبایل">
-                    <textarea  name="address" type="text" placeholder="ادرس پستی"></textarea>
+                    <textarea name="address" type="text" placeholder="ادرس پستی"></textarea>
                     <input type="submit" value="ثبت">
                 </form>
                 <span style="cursor: pointer" onclick="javascript:show_login()">قبلا ثبت نام   کرده اید؟ورود</span>
@@ -49,23 +50,20 @@
 
         </section>
 
-        {% for m in get_flashed_messages() %}
-            {{ m }}
-        {% endfor %}
-    <script>
-        const register_box = document.getElementById('register-box')
-        const login_box = document.getElementById('login-box')
+        <script>
+            const register_box = document.getElementById('register-box')
+            const login_box = document.getElementById('login-box')
 
-        const show_register  = () => {
-            register_box.style.display = "block"
-            login_box.style.display = "none"
-        }
+            const show_register = () => {
+                register_box.style.display = "block"
+                login_box.style.display = "none"
+            }
 
-        const show_login  = () => {
-            register_box.style.display = "none"
-            login_box.style.display = "block"
-        }
-    </script>
+            const show_login = () => {
+                register_box.style.display = "none"
+                login_box.style.display = "block"
+            }
+        </script>
 
 
     </section>

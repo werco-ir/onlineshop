@@ -68,6 +68,7 @@ def register():
         if register != None:
             user = User(username=username, password=sha256_crypt.encrypt(password), email=email, phone=phone,
                         address=address)
+            flash('وارد حساب کاربری شدید.')
             db.session.add(user)
             db.session.commit()
             login_user(user)
@@ -80,6 +81,7 @@ def register():
 @login_required
 def dashboard():
     if request.method == 'GET':
+        flash('وارد حساب کاربری شدید.')
         return render_template('user/dashboard.html')
     else:
         username = request.form.get('username', None)
@@ -128,7 +130,7 @@ def add_to_cart():
         db.session.add(item)
     else:
         cart_item.quantity += 1
-
+    flash('به سبد خرید اضافه شد')
     db.session.commit()
 
     return redirect(url_for('user.cart'))
