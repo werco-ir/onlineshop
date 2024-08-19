@@ -967,10 +967,12 @@ a > img {
     font-weight: 400;
 
 }
-.admin-login-body{
+
+.admin-login-body {
     height: 100vh;
 }
-.admin-login-header{
+
+.admin-login-header {
     width: 80%;
     margin-right: 150px;
     height: 45px;
@@ -991,8 +993,6 @@ a > img {
     float: left;
     margin-right: 85px;
 }
-
-
 
 
 .simple-box-admin-login h1 {
@@ -1052,11 +1052,12 @@ a > img {
     background: white;
 }
 
-.admin-dashboard-body{
+.admin-dashboard-body {
     height: 100vh;
 }
-.admin-dashboard-header{
-        width: 80%;
+
+.admin-dashboard-header {
+    width: 80%;
     margin-right: 150px;
     height: 45px;
     display: flex;
@@ -1077,7 +1078,7 @@ a > img {
     margin-right: 85px;
 }
 
-.simple-box-admin-dashboard{
+.simple-box-admin-dashboard {
     background: rgba(230, 227, 227, 0.75);
     border: 2px solid rgb(216, 216, 216);
     border-radius: 30px;
@@ -1087,17 +1088,20 @@ a > img {
     padding: 10px;
     overflow: auto;
 }
+
 .simple-box-admin-dashboard h1 {
     color: #1220d8;
     margin: auto;
 
 
 }
-.simple-box-admin-dashboard  br{
+
+.simple-box-admin-dashboard br {
     display: none;
 
 }
-.simple-box-admin-dashboard{
+
+.simple-box-admin-dashboard {
     padding: 20px 70px;
     max-width: 480px;
 }
@@ -1109,13 +1113,16 @@ a > img {
     margin-top: 0;
 
 }
-.simple-box-admin-dashboard a{
+
+.simple-box-admin-dashboard a {
     text-decoration: none;
 }
-.admin-order-body{
+
+.admin-order-body {
     height: 100vh;
 }
-.admin-order-header{
+
+.admin-order-header {
     width: 80%;
     margin-right: 150px;
     height: 45px;
@@ -1138,7 +1145,7 @@ a > img {
 }
 
 
-.simple-box-admin-order{
+.simple-box-admin-order {
     background: rgba(230, 227, 227, 0.75);
     border: 2px solid rgb(216, 216, 216);
     border-radius: 30px;
@@ -1148,29 +1155,132 @@ a > img {
     overflow: auto;
     max-width: fit-content;
 }
-.simple-box-admin-order td,th{
+
+.simple-box-admin-order td, th {
     padding: 10px;
 
 
-
 }
-.simple-box-admin-order h1{
+
+.simple-box-admin-order h1 {
     color: #1220d8;
     margin: auto;
 }
-.simple-box-admin-order input{
+
+.simple-box-admin-order input {
     background: #ffca01;
     width: 60px;
     border-radius: 10px;
-    border:2px solid snow;
+    border: 2px solid snow;
     color: snow;
     font-family: Vazirmatn;
     font-weight: normal;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.simple-box-admin-order input:hover{
+
+.simple-box-admin-order input:hover {
     background: #b69302;
     color: #afabab;
-     border:2px solid #afabab;
+    border: 2px solid #afabab;
+}
+
+.simple-box-admin-product {
+    background: rgba(230, 227, 227, 0.75);
+    border: 2px solid rgb(216, 216, 216);
+    border-radius: 30px;
+    margin: 60px auto 250px auto;
+    color: rgb(37, 36, 36);
+    padding: 10px;
+    overflow: auto;
+    max-width: fit-content;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.simple-box-admin-product a {
+
+    padding-right: 12px;
+    text-decoration: none;
+}
+.simple-box-admin-product input,textarea,[type='number'] {
+    background: #ededed;
+    width: 400px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid snow;
+    font-family: Vazirmatn;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right:40px;
+    color: #5a5a5a;
+    float: left;
+
+}
+.simple-box-admin-product br{
+    height: 0;
+}
+.simple-box-admin-product-add {
+    background: rgba(230, 227, 227, 0.75);
+    border: 2px solid rgb(216, 216, 216);
+    border-radius: 30px;
+    margin: 60px auto 250px auto;
+    color: rgb(37, 36, 36);
+    padding: 10px;
+    overflow: auto;
+    max-width: fit-content;
+    text-align: center;
+    margin-top: 0;
+
+}
+
+
+.simple-box-admin-product-add input,textarea{
+    background: #ededed;
+    width: 700px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid snow;
+    font-family: Vazirmatn;
+    font-weight: normal;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding-right:40px;
+    color: #5a5a5a;
+    float: left;
+
+
+}
+.simple-box-admin-product-add br{
+    height: 0;
+}
+.simple-box-admin-product-add label {
+    color: #5a5a5a;
+    display: inline;
+
+
+}
+.simple-box-admin-product-add .add-product{
+    all: unset;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 290px;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+    color: #00b6ff;
+    background: transparent;
+    border: 2px solid #00b6ff;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 0;
+    box-shadow: 0 2px 2px #00b6ff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.simple-box-admin-product-add .add-product:hover {
+    background: white;
 }
