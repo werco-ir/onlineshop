@@ -87,6 +87,7 @@
 
 p {
     text-align: justify;
+
 }
 
 body {
@@ -200,7 +201,7 @@ nav button img {
 .header-text form {
     display: flex;
     align-items: center;
-    background: #959595;
+    background: #b6b3b3;
     border-radius: 5px;
     padding: 10px;
     margin-top: 30px;
@@ -215,7 +216,7 @@ nav button img {
     outline: 0;
     font-size: 16px;
     padding-left: 10px;
-    background: #959595;
+    background: #b6b3b3;
 
 }
 
@@ -506,12 +507,22 @@ a > img {
     text-align: justify;
     color: rgb(14, 14, 14);
     background: rgba(255, 255, 255, 0.66);
+    margin-top: 40px;
 
+
+}
+.product-description-box > h2{
+        color: rgba(255, 1, 90, 0.85);
 }
 
 .similar-products-box {
     max-width: 1100px;
     margin: auto;
+    margin-top: 40px;
+}
+
+.similar-products-box > h2 {
+    color: rgba(255, 1, 90, 0.83);
 }
 
 .background {
@@ -823,7 +834,7 @@ a > img {
 
 }
 
-.simple-box-user-dashboard td, th {
+.simple-box-user-dashboard td, .simple-box-user-dashboard th {
     border-bottom: 2px solid rgba(9, 9, 9, 0.17);
     padding: 10px;
     margin-top: 0;
@@ -1203,7 +1214,8 @@ a > img {
     padding-right: 12px;
     text-decoration: none;
 }
-.simple-box-admin-product input,textarea,[type='number'] {
+
+.simple-box-admin-product input, .simple-box-admin-product textarea, .simple-box-admin-product[type='number'] {
     background: #ededed;
     width: 400px;
     height: 30px;
@@ -1213,14 +1225,16 @@ a > img {
     font-weight: normal;
     margin-top: 20px;
     margin-bottom: 20px;
-    padding-right:40px;
+    padding-right: 40px;
     color: #5a5a5a;
     float: left;
 
 }
-.simple-box-admin-product br{
+
+.simple-box-admin-product br {
     height: 0;
 }
+
 .simple-box-admin-product-add {
     background: rgba(230, 227, 227, 0.75);
     border: 2px solid rgb(216, 216, 216);
@@ -1236,7 +1250,7 @@ a > img {
 }
 
 
-.simple-box-admin-product-add input,textarea{
+.simple-box-admin-product-add input, .simple-box-admin-product-add textarea {
     background: #ededed;
     width: 700px;
     height: 40px;
@@ -1246,22 +1260,25 @@ a > img {
     font-weight: normal;
     margin-top: 5px;
     margin-bottom: 20px;
-    padding-right:40px;
+    padding-right: 40px;
     color: #5a5a5a;
     float: left;
 
 
 }
-.simple-box-admin-product-add br{
+
+.simple-box-admin-product-add > br {
     height: 0;
 }
-.simple-box-admin-product-add label {
+
+.simple-box-admin-product-add > label {
     color: #5a5a5a;
     display: inline;
 
 
 }
-.simple-box-admin-product-add .add-product{
+
+.simple-box-admin-product-add .add-product {
     all: unset;
     border-radius: 10px;
     width: 50%;
