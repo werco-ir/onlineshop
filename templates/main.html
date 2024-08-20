@@ -6,11 +6,35 @@
 
 {% block body %}
 
-    {% include 'part/header.html'%}
+    {% include 'part/header.html' %}
+    <div id="slideshow">
+        <img class="banner" src="{{ url_for('static',filename='image/banner1.jpg') }}">
+        <img class="banner" src="{{ url_for('static',filename='image/banner2.jpg') }}">
+        <img class="banner" src="{{ url_for('static',filename='image/banner3.jpg') }}">
+        <img class="banner" src="{{ url_for('static',filename='image/banner4.jpg') }}">
+    </div>
 
     <section class="products">
         {% for p in products %}
-    {% include 'part/product.html'%}
+            {% include 'part/product.html' %}
         {% endfor %}
     </section>
+    <script>
+        const slide_show_items = document.getElementsByClassName('banner')
+        var next_slide = 0
+        const change_slide_show = () => {
+            if (next_slide > slide_show_items.length-1)
+                next_slide = 0
+
+            if (next_slide == 0)
+                slide_show_items[slide_show_items.length - 1].style.height = "0"
+            else
+                slide_show_items[next_slide -1].style.height = '0'
+
+            slide_show_items[next_slide].style.height = "500px"
+            next_slide++
+        }
+        change_slide_show()
+        setInterval(change_slide_show,3000)
+    </script>
 {% endblock %}

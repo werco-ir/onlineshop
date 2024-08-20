@@ -1333,3 +1333,17 @@ table tr:nth-child(even){
 table tr:last-child td{
     border:none
 }
+.banner{
+    margin: auto;
+    display: block;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 35px;
+    height:0;
+    transition: height 500ms ease-in;
+
+}
+#slideshow{
+    margin-top: 30px;
+    height: 500px;
+}
