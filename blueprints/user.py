@@ -170,17 +170,14 @@ def cart():
 @app.route('/payment', methods=['GET'])
 @login_required
 def payment():
-    r = requests.post("https://payment.zarinpal.com/pg/v4/payment/request.json",
+    r = requests.post('https://payment.zarinpal.com/pg/v4/payment/request.json',
                       data={
-                          'merchant_id': '73a4c8d3-8e5a-4909-827e-fd3e0b1574c4',
-                          'amount': 10000,
-                          'callback_url': 'http://localhost:5000/verify',
-                          'description': 'Transaction description'
-
+                            'merchant_id': '73a4c8d3-8e5a-4909-827e-fd3e0b1574c4',
+                            'amount': '1000',
+                            'callback_url': 'localhost:5000/verify',
                       })
     print(r.text)
-    return "ok"
-
+    return "okk"
 
 @app.route('/user/dashboard/order/<id>', methods=['GET'])
 @login_required
