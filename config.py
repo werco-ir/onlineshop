@@ -1,4 +1,5 @@
 SQLALCHEMY_DATABASE_URI = "sqlite:///database.db"
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "1234"
+ADMIN_USERNAME = "fatemehmayavar"
+ADMIN_PASSWORD = "1810591465"
 SECRET_KEY = "DFGHJasefghjml;p98hnbvftfddvhjk,lhdrwsd"
+MYSQL_CONFIG = "mysql+mysqlconnector://shirin2001:fatemehmayavar@localhost:3306/wercoir_db"

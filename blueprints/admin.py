@@ -59,6 +59,7 @@ def products():
         price = request.form.get("price", None)
         active = request.form.get("active", None)
         file = request.files.get('cover', None)
+        media = request.files.get('video', None)
 
         p = Product(name=name, description=description, price=price)
         if active == None:
@@ -70,9 +71,11 @@ def products():
         db.session.commit()
 
         file.save(f'static/cover/{p.id}.jpg')
+        media.save(f'static/video/{p.id}.mp4')
+
         flash("محصول جدید اضافه شد.")
 
-        return "done"
+        return render_template("admin/products.html", p=p)
 @app.route('/admin/dashboard/edit-product/<id>', methods=['GET', 'POST'])
 def edit_product(id):
     product = Product.query.filter(Product.id == id).first_or_404()
@@ -85,6 +88,7 @@ def edit_product(id):
         price = request.form.get("price", None)
         active = request.form.get("active", None)
         file = request.files.get('cover', None)
+        media = request.files.get('video', None)
 
         product.name = name
         product.description = description
@@ -97,8 +101,12 @@ def edit_product(id):
 
         db.session.commit()
 
-        if file.filename != "":
+        if file.filename != None:
             file.save(f'static/cover/{product.id}.jpg')
+            media.save(f'static/video/{product.id}.mp4')
+
             flash("تغییرات با موفقیت ثبت شد.")
 
         return redirect(url_for("admin.edit_product", id=id))
+
+

@@ -4,18 +4,25 @@
 {% endblock %}
 {% block body %}
     <section class="admin-dashboard-body">
-        <nav class="admin-dashboard-header">
-            <img src="{{ url_for('static',filename='image/loogoo.jpg' ) }}" alt="werco.ir">
+        <header class="header">
 
-            <ul>
-                <li><a href="/">صفحه اصلی</a></li>
-                <li><a href="/about">درباره ما</a></li>
-                <li><a href="/user/dashboard">پنل کاربری</a></li>
-                <li><a href="/admin/login">پنل مدیریت</a></li>
-                <Li><a href="/admin/dashboard/products">صفحه محصولات</a></Li>
-                <Li><a href="/user/logout" class="red-btn">خروج از حساب کاربری</a></Li>
-            </ul>
-        </nav>
+            <nav>
+                <div class="logo">
+                    <img class="header-img" src="{{ url_for('static',filename='image/loogoo2.jpg' ) }}" alt="werco.ir">
+                </div>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
+                <ul class="menu">
+                    <li><a href="/">صفحه اصلی</a></li>
+                    <li><a href="/about">درباره ما</a></li>
+                    <li><a href="/admin/dashboard/products">محصولات</a></li>
+                    <li><a href="/user/dashboard">پنل کاربری</a></li>
+                    <li><a href="/admin/login">پنل مدیریت</a></li>
+                    <li><a href="/user/login">ثبت نام/ ورود</a></li>
+                </ul>
+            </nav>
+
+        </header>
         <section class="simple-box-admin-dashboard">
 
             <h1>سفارشات</h1>

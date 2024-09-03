@@ -1,19 +1,21 @@
-<div  class="product-box" >
+<div class="product-box">
 
-    <a  style="all:unset;cursor: pointer"; href="{{ url_for('general.product', id=p.id, name=p.name ) }}">
+    <a style="all:unset;cursor: pointer" ; href="{{ url_for('general.product', id=p.id, name=p.name ) }}">
         <section>
-            <img src="{{ url_for('static', filename='cover/' +p.id|string+'.jpg') }}">
+            <img class="main-img" src="{{ url_for('static', filename='cover/' +p.id|string+'.jpg') }}">
             <span class="tag red " style="margin-right:5px ;"><img
                     src="{{ url_for('static',filename="theme-image/support.png") }}">6 ماه پشتیبانی</span>
-            <span class="tag blue"><img src="{{ url_for('static',filename="theme-image/vip.png") }}"> ویرایش اختصاصی</span>
+            <span class="tag blue"><img
+                    src="{{ url_for('static',filename="theme-image/vip.png") }}"> ویرایش اختصاصی</span>
 
             <h3>{{ p.name }}</h3>
-            <P >{{ p.description|truncate(100) }}</p>
-            <span  class="price" style=" float: left;padding-left: 10px;">{{ p.price }}</span>
+            <P>{{ p.description|truncate(100) }}</p>
+            <span class="price" style=" float: left;padding-left: 10px;">{{ p.price }}</span>
 
         </section>
     </a>
     <a class="add-to-cart-btn" href="/add-to-cart?id={{ p.id }}">افزودن به<img
             src="{{ url_for('static',filename="theme-image/cart.png") }}"></a>
+
 
 </div>

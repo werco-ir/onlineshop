@@ -7,32 +7,30 @@
 {% block body %}
     <section class="about-body">
 
-        <nav class="about-header">
-            <img src="{{ url_for('static',filename='image/loogoo.jpg' ) }}" alt="werco.ir">
+<header class="header">
 
-            <ul>
-                <li><a href="/">صفحه اصلی</a></li>
-                <li><a href="/about">درباره ما</a></li>
-                <li><a href="/cart">سبد خرید</a></li>
-                <li><a href="/user/dashboard">پنل کاربری</a></li>
-            </ul>
+  <nav>
+    <div class="logo">
+      <img  class="header-img" src="{{ url_for('static',filename='image/loogoo2.jpg' ) }}" alt="werco.ir">
+    </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="menu">
+                   <li><a href="/">صفحه اصلی</a></li>
+                    <li><a href="/about">درباره ما</a></li>
+                    <li><a href="/cart">سبد خرید</a></li>
+                    <li><a href="/user/dashboard">پنل کاربری</a></li>
+                    <li><a href="/admin/login">پنل مدیریت</a></li>
+                    <li><a href="/user/login">ثبت نام/ ورود</a></li>
+    </ul>
+  </nav>
 
-        </nav>
+</header>
     <section class="simple-box-about">
         <h1>درباره ورکو</h1>
         <p>از خداوند منان بسیار سپاسگزاریم که توفیق در کنار شما بودن را به ما اعطا کرد.<br>شرکت ورکو همواره در تلاش بوده و هست تا در کنار کسانی باشد که با اراده و تمام توان برای قدم برداشتن به سوی اینده ای بهتر تلاش میکنند،و امیدواریم که یاری دهنده خوبی باشیم.<br>هدف از ساخت این سایت در اختیار گذاشتن قالب هایی کدنویسی شده اماده برای کسب و کارانی است که در قدم های اول شغل خود هستند و با هزینه ای کمتر از 1/2 قیمت میخواهند وبسایت فروشگاهی خود را داشته باشند علاوه براین بدلیل از قبل نوشته شدن کد ها سرعت تحویل از حداقل 2الی 3 ماه به کمتراز 14 روز تغییر میابد.<br>لازم بذکر است که قالب ها دقیقا همانند سایت هایی که به صورت شخصی سفارش داده میشوند دارای امنیت بالا ،کیفیت بالا، جزییات و زیبایی هایی که فقط در سایت های حرفه ای مشاهده میکنید هستند.اعتماد شما برای ما با ارزش تر از همه چیز است و درتلاشیم با کیفیت بالا و رضایت شما ذره ای جبران کرده باشیم.</p>
 
     </section>
-    <section class="connect-us">
-        <ul>
-            <li><a href="tel:09057983535">شماره تماس:   09057983535</a></li>
-            <li>واتساپ:   09057983535</li>
-            <li><a href="https://t.me/Werco_official">تلگرام:   09057983535</a></li>
-            <li><a href="https://www.instagram.com/werco_official?igsh=MXRvYnlyaGJmZjd5MQ==">اینستاگرام:   werco_official</a></li>
-            <li>ایمیل:    info.werco@gmail.com</li>
-            <li><a href="https://github.com/werco-ir">گیتهاب:    werco-ir</a></li>
 
-        </ul>
-    </section>
     </section>
 {% endblock %}
